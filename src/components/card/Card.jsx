@@ -3,7 +3,7 @@ import CardHeader from '../cardHeader/CardHeader';
 import CardBody from '../cardBody/CardBody';
 
 const Card = ({ details }) => {
-    const { avatar, meters, workouts, image, title, time } = details;
+    const { trainer, meters, workouts, image, title, time } = details;
     return (
         <article className="card">
             <CardHeader image={image} workouts={workouts} />
@@ -11,7 +11,7 @@ const Card = ({ details }) => {
                 title={title}
                 time={time}
                 meters={meters}
-                avatar={avatar}
+                trainer={trainer}
             />
         </article>
     );

@@ -98,14 +98,14 @@ body {
     color: #000;
 }
 
-.card-content .card-avatar {
+.card-content .card-trainer {
     display: inline-block;
     margin-left: 12px;
     vertical-align: top;
     border-radius: 5px;
 }
 
-.card-content .card-avatar img {
+.card-content .card-trainer img {
     vertical-align: top;
     width: 35px;
     height: 35px;
