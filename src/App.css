@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    margin: 10vh;
+    font-family: 'Open Sans', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: minmax(350px, auto);
+    grid-row-gap: 1.2rem;
+    grid-column-gap: 1.9rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card {
+    position: relative;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 340px;
+    border-radius: 6px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+        rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-.App-link {
-  color: #61dafb;
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image-cover {
+    display: block;
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 135px;
+    height: 200px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background: rgba(0, 10, 40, 0.5);
+    text-transform: uppercase;
+    border-top-right-radius: 6px;
+    cursor: pointer;
+}
+
+.overlay h2 {
+    margin-top: 45px;
+    font-size: 29px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.overlay p {
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.overlay .icon {
+    display: block;
+    margin-top: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25px;
+    height: 18px;
+}
+
+.card-content {
+    padding-top: 18px;
+    padding-left: 20px;
+    width: 100%;
+}
+
+.card-content .card-title {
+    display: inline-block;
+    width: 79%;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #000;
+}
+
+.card-content .card-avatar {
+    display: inline-block;
+    margin-left: 12px;
+    vertical-align: top;
+    border-radius: 5px;
+}
+
+.card-content .card-avatar img {
+    vertical-align: top;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.post-meta {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.timer img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+}
+
+.timer span {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.meters img {
+    display: inline-block;
+    margin-left: 12px;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+}
+
+.meters span {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.card .view-details-link {
+    opacity: 0;
+}
+
+.card:hover .view-details-link {
+    position: relative;
+    margin-top: 10px;
+    top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: expanded;
+    text-decoration: none;
+    color: #6495ed;
+    opacity: 1;
 }

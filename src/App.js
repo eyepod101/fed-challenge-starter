@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import Card from './components/card/Card';
+import { MockedData } from './mocks/mockedData';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [posts, setPosts] = useState({});
+
+    useEffect(() => {
+        setPosts(MockedData);
+    }, []);
+
+    return (
+        <div className="App">
+            <header className="app-header"></header>
+            <section className="cards">
+                {Object.keys(posts).map((key) => (
+                    <Card key={key} index={key} details={posts[key]} />
+                ))}
+            </section>
+        </div>
+    );
+};
 
 export default App;
